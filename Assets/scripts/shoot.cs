@@ -16,7 +16,7 @@ public class shoot : MonoBehaviour {
 		// Fire
 		if(Input.GetButtonDown("Fire1")){
 			GameObject instantiatedProjectile = Instantiate(projectile, transform.position + tower.rotation * initPosition, transform.rotation) as GameObject;
-			instantiatedProjectile.rigidbody.velocity = tower.rotation * (rigidbody.velocity + new Vector3(0f, 0f, speed)); 
+			instantiatedProjectile.rigidbody.velocity = tower.rotation * (rigidbody.velocity + new Vector3(0f, 0f, speed));
 		}
 	}
 }

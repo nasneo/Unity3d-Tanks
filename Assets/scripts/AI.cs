@@ -20,12 +20,17 @@ public class AI : MonoBehaviour {
 	}
 	
 	void Update () {
-		if((transform.position.z - tank.transform.position.z)  < 100){
-				transform.LookAt(tank.position);	
+		if((transform.position.z - tank.transform.position.z)  < 40 && (lastshoot + rate < Time.time)){
+				transform.LookAt(tank.position);
+				Fire();
 		}
-		
-		if(lastshoot + rate < Time.time){
-			Fire();	
+	}
+	void OnCollisionEnter(Collision collision){
+		if(collision.relativeVelocity.magnitude > 1){
+			health -= 10;	
+		}
+		if(health == 0){
+				 Destroy(gameObject);
 		}
 	}
 }

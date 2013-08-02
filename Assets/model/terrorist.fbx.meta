@@ -1,0 +1,126 @@
+fileFormatVersion: 2
+guid: b7d3cf157fc5e2c4abec1c19809b5c3e
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: Camera
+    100002: Cube_001_Material_005
+    100004: Cube_Material
+    100006: Cylinder_001_None
+    100008: Cylinder_002_None
+    100010: Cylinder_007_Material
+    100012: Cylinder_Material_004
+    100014: Grid_Material_003
+    100016: Lamp
+    100018: Lamp_001
+    100020: Lamp_002
+    100022: Lamp_003
+    100024: //RootNode
+    100026: Torus_001_None
+    100028: Torus_002_None
+    100030: Torus_003_None
+    100032: Torus_None
+    400000: Camera
+    400002: Cube_001_Material_005
+    400004: Cube_Material
+    400006: Cylinder_001_None
+    400008: Cylinder_002_None
+    400010: Cylinder_007_Material
+    400012: Cylinder_Material_004
+    400014: Grid_Material_003
+    400016: Lamp
+    400018: Lamp_001
+    400020: Lamp_002
+    400022: Lamp_003
+    400024: //RootNode
+    400026: Torus_001_None
+    400028: Torus_002_None
+    400030: Torus_003_None
+    400032: Torus_None
+    2300000: Cube_001_Material_005
+    2300002: Cube_Material
+    2300004: Cylinder_001_None
+    2300006: Cylinder_002_None
+    2300008: Cylinder_007_Material
+    2300010: Cylinder_Material_004
+    2300012: Grid_Material_003
+    2300014: Torus_001_None
+    2300016: Torus_002_None
+    2300018: Torus_003_None
+    2300020: Torus_None
+    3300000: Cube_001_Material_005
+    3300002: Cube_Material
+    3300004: Cylinder_001_None
+    3300006: Cylinder_002_None
+    3300008: Cylinder_007_Material
+    3300010: Cylinder_Material_004
+    3300012: Grid_Material_003
+    3300014: Torus_001_None
+    3300016: Torus_002_None
+    3300018: Torus_003_None
+    3300020: Torus_None
+    4300000: Cube_Material
+    4300002: Grid_Material_003
+    4300004: Cube_001_Material_005
+    4300006: Cylinder_Material_004
+    4300008: Cylinder_007_Material
+    4300010: Torus_None
+    4300012: Torus_001_None
+    4300014: Torus_002_None
+    4300016: Torus_003_None
+    4300018: Cylinder_001_None
+    4300020: Cylinder_002_None
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 2
+  userData: 
