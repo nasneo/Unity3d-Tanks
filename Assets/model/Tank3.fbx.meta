@@ -1,0 +1,122 @@
+fileFormatVersion: 2
+guid: 7df1cb94d329dea488be2d015ac0d501
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: curveBrush1
+    100002: curveFlameCurly
+    100004: curveFlameCurly1
+    100006: curveFlameCurly2
+    100008: curveFlameCurly3
+    100010: curveGrassClump
+    100012: curveLightBulb
+    100014: curveSnakeGreen
+    100016: group
+    100018: nurbsCube1
+    100020: pasted__pCube1
+    100022: pasted__transform1
+    100024: pCube1
+    100026: polySurface25
+    100028: polySurface33
+    100030: polySurface34
+    100032: polySurface47
+    100034: polySurface47_MeshPart0
+    100036: polySurface47_MeshPart1
+    100038: polySurface47_MeshPart2
+    100040: polySurface48
+    100042: //RootNode
+    100044: transform1
+    400000: curveBrush1
+    400002: curveFlameCurly
+    400004: curveFlameCurly1
+    400006: curveFlameCurly2
+    400008: curveFlameCurly3
+    400010: curveGrassClump
+    400012: curveLightBulb
+    400014: curveSnakeGreen
+    400016: group
+    400018: nurbsCube1
+    400020: pasted__pCube1
+    400022: pasted__transform1
+    400024: pCube1
+    400026: polySurface25
+    400028: polySurface33
+    400030: polySurface34
+    400032: polySurface47
+    400034: polySurface47_MeshPart0
+    400036: polySurface47_MeshPart1
+    400038: polySurface47_MeshPart2
+    400040: polySurface48
+    400042: //RootNode
+    400044: transform1
+    2300000: polySurface25
+    2300002: polySurface34
+    2300004: polySurface47_MeshPart0
+    2300006: polySurface47_MeshPart1
+    2300008: polySurface47_MeshPart2
+    2300010: polySurface48
+    3300000: polySurface25
+    3300002: polySurface34
+    3300004: polySurface47_MeshPart0
+    3300006: polySurface47_MeshPart1
+    3300008: polySurface47_MeshPart2
+    3300010: polySurface48
+    4300000: polySurface25
+    4300002: polySurface34
+    4300004: polySurface47_MeshPart0
+    4300006: polySurface47_MeshPart1
+    4300008: polySurface47_MeshPart2
+    4300010: polySurface48
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 2
+  userData: 

@@ -8,7 +8,7 @@ public class RotationTank : MonoBehaviour
 	
 	void Update ()
 	{
-		if (transform.position.z - tank.transform.position.z < 5) {
+		if (Vector3.Distance (tank.transform.position, transform.position) < 5f) {
 			if (Input.GetKeyDown ("d")) {
 				tank.GetComponent<MoveTank> ().Turn (true);
 			} else if (Input.GetKeyDown ("a")) {

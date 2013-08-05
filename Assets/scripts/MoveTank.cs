@@ -11,39 +11,41 @@ public class MoveTank : MonoBehaviour
 	public float acc;
 	public float maxSpeed;
 	private float currentSpeed;
+	private Vector3 pos;
 	
 	void Start ()
 	{
-	//	transform.position = new Vector3 (0, 0.8f, 0);
+		transform.position = new Vector3 (0, 0.5f, 0);
 		currentRotation = Quaternion.identity;
 	}
-	
+
 	void Update ()
 	{
+		if (transform.forward == new Vector3 (1, 0, 0)) {
+			pos = new Vector3 (0, 0, -0.35f);	
+		}
+		if (transform.forward == new Vector3 (0, 0, 1)) {
+			pos = new Vector3 (0.35f, 0, 0);	
+		}
 		currentSpeed += acc * Time.deltaTime;
-		if(currentSpeed > maxSpeed){
+		if (currentSpeed > maxSpeed) {
 			currentSpeed = maxSpeed;
 		}
 		rigidbody.velocity = transform.forward * currentSpeed;
-		transform.rotation = Quaternion.RotateTowards(transform.rotation, currentRotation, Time.deltaTime * 10f);
-//		Debug.Log(rigidbody.velocity);
-		//transform.position += new Vector3(30f*Time.deltaTime, 0, 0);
+		transform.rotation = Quaternion.RotateTowards (transform.rotation, currentRotation, Time.deltaTime * 10f);
 		if (Input.GetKey ("a")) {
-			transform.position -= new Vector3 (0.2f, 0, 0);
-			transform.Rotate (0, 0, 2);
+			transform.position -= pos;
+			transform.Rotate (0, 0, 4);
 		}
 		if (Input.GetKey ("d")) {
-			transform.position += new Vector3 (0.2f, 0, 0);
-			transform.Rotate (0, 0, -2);
+			transform.position += pos;
+			transform.Rotate (0, 0, -4);
 		}		
 		transform.rotation = Quaternion.Slerp (transform.rotation, currentRotation, Time.deltaTime * rotationSpeed);
 	}
 
-	void OnCollisionEnter (Collision collision)
-	{
-		if (collision.relativeVelocity.magnitude > 0) {
+	public void SlowSpeed(){
 			currentSpeed = 1f;
-		}
 	}
 
 	public void Turn (bool isToRight)

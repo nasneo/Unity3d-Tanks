@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AI : MonoBehaviour {
+public class AI : MonoBehaviour
+{
 	public int health = 50;
 	public Transform tank;
 	public GameObject projectile;
@@ -10,27 +11,32 @@ public class AI : MonoBehaviour {
 	private float lastshoot;
 	public float rate = 0.5f;
 	
-	void Start () {
+	void Start ()
+	{
 	}
 	
-	void Fire(){
-		GameObject instantiatedProjectile = Instantiate(projectile, transform.position + transform.rotation * bulletOffset, transform.rotation) as GameObject;
-				instantiatedProjectile.rigidbody.velocity = ((tank.position - transform.position).normalized * speed);	
+	void Fire ()
+	{
+		GameObject instantiatedProjectile = Instantiate (projectile, transform.position + transform.rotation * bulletOffset, transform.rotation) as GameObject;
+		instantiatedProjectile.rigidbody.velocity = ((tank.position - transform.position).normalized * speed);	
 		lastshoot = Time.time;
 	}
 	
-	void Update () {
-		if((transform.position.z - tank.transform.position.z)  < 40 && (lastshoot + rate < Time.time)){
-				transform.LookAt(tank.position);
-				Fire();
+	void Update ()
+	{
+		if (Vector3.Distance (transform.position, tank.transform.position) < 40 && (lastshoot + rate < Time.time)) {
+			transform.LookAt (tank.position);
+			Fire ();
 		}
 	}
-	void OnCollisionEnter(Collision collision){
-		if(collision.relativeVelocity.magnitude > 1){
+
+	void OnCollisionEnter (Collision collision)
+	{
+		if (collision.relativeVelocity.magnitude > 1) {
 			health -= 10;	
 		}
-		if(health == 0){
-				 Destroy(gameObject);
+		if (health == 0) {
+			Destroy (gameObject);
 		}
 	}
 }
