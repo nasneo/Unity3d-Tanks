@@ -5,7 +5,6 @@ public class Tank : MonoBehaviour
 {
 	public int maxHealth = 100;
 	public int curHealth = 100;
-	private int damage = 10;
 	public float healthBar;
 	
 	void Start ()

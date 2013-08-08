@@ -7,7 +7,8 @@ public class MoveTank : MonoBehaviour
 	public float rotationSpeed = 2f;
 	public float rate = 0.5f;
 	private float last;
-	private Quaternion currentRotation;
+	private Quaternion desiredRotation;
+	private GameObject lastUsedCorner;
 	public float acc;
 	public float maxSpeed;
 	private float currentSpeed;
@@ -16,41 +17,50 @@ public class MoveTank : MonoBehaviour
 	void Start ()
 	{
 		transform.position = new Vector3 (0, 0.5f, 0);
-		currentRotation = Quaternion.identity;
+		desiredRotation = Quaternion.identity;
 	}
 
 	void Update ()
 	{
-		if (transform.forward == new Vector3 (1, 0, 0)) {
-			pos = new Vector3 (0, 0, -0.35f);	
-		}
-		if (transform.forward == new Vector3 (0, 0, 1)) {
-			pos = new Vector3 (0.35f, 0, 0);	
-		}
 		currentSpeed += acc * Time.deltaTime;
 		if (currentSpeed > maxSpeed) {
 			currentSpeed = maxSpeed;
 		}
-		rigidbody.velocity = transform.forward * currentSpeed;
-		transform.rotation = Quaternion.RotateTowards (transform.rotation, currentRotation, Time.deltaTime * 10f);
+		
+		transform.rotation = Quaternion.RotateTowards (transform.rotation, desiredRotation, Time.deltaTime * 10f);
 		if (Input.GetKey ("a")) {
-			transform.position -= pos;
+			transform.position -= Quaternion.Euler (0f, transform.rotation.eulerAngles.y, 0f) * new Vector3 (0.3f, 0, 0);
 			transform.Rotate (0, 0, 4);
 		}
 		if (Input.GetKey ("d")) {
-			transform.position += pos;
+			transform.position += Quaternion.Euler (0f, transform.rotation.eulerAngles.y, 0f) * new Vector3 (0.3f, 0, 0);
 			transform.Rotate (0, 0, -4);
 		}		
-		transform.rotation = Quaternion.Slerp (transform.rotation, currentRotation, Time.deltaTime * rotationSpeed);
+		transform.rotation = Quaternion.Slerp (transform.rotation, desiredRotation, Time.deltaTime * rotationSpeed);
 	}
-
-	public void SlowSpeed(){
-			currentSpeed = 1f;
+	
+	public void FixedUpdate ()
+	{	
+		rigidbody.velocity = transform.forward * currentSpeed;
 	}
-
-	public void Turn (bool isToRight)
+	
+	void OnTriggerEnter (Collider other)
 	{
-		currentRotation = Quaternion.Euler (0f, currentRotation.eulerAngles.y + (isToRight ? 90f : -90f), 0f);	
-		
+		if (other.tag == "PathCorner") {
+			// Turn
+			Transform cornerTR = other.transform;
+			desiredRotation = cornerTR.rotation;
+			
+			// Create next Block
+			PathBlock currentPB = cornerTR.parent.GetComponent<PathBlock> ();
+			
+			currentPB.nextPB.CreateNextPathBlock ();
+			Destroy (currentPB.gameObject, 5f);
+		}
+	}
+
+	public void SlowSpeed ()
+	{
+		currentSpeed = 1f;
 	}
 }

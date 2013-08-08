@@ -122,9 +122,53 @@ ModelImporter:
     2300000: a_cannon01
     2300002: a_cannon02
     2300004: Plane
+    2300006: back_left_leg01
+    2300008: back_left_leg02
+    2300010: back_left_leg03
+    2300012: back_right_leg01
+    2300014: back_right_leg02
+    2300016: back_right_leg03
+    2300018: body
+    2300020: cannon
+    2300022: front_left_leg01
+    2300024: front_left_leg02
+    2300026: front_left_leg03
+    2300028: front_right_leg01
+    2300030: front_right_leg02
+    2300032: front_right_leg03
+    2300034: lid
+    2300036: middle_left_leg01
+    2300038: middle_left_leg02
+    2300040: middle_left_leg03
+    2300042: middle_right_leg01
+    2300044: middle_right_leg02
+    2300046: middle_right_leg03
+    2300048: turret
     3300000: a_cannon01
     3300002: a_cannon02
     3300004: Plane
+    3300006: back_left_leg01
+    3300008: back_left_leg02
+    3300010: back_left_leg03
+    3300012: back_right_leg01
+    3300014: back_right_leg02
+    3300016: back_right_leg03
+    3300018: body
+    3300020: cannon
+    3300022: front_left_leg01
+    3300024: front_left_leg02
+    3300026: front_left_leg03
+    3300028: front_right_leg01
+    3300030: front_right_leg02
+    3300032: front_right_leg03
+    3300034: lid
+    3300036: middle_left_leg01
+    3300038: middle_left_leg02
+    3300040: middle_left_leg03
+    3300042: middle_right_leg01
+    3300044: middle_right_leg02
+    3300046: middle_right_leg03
+    3300048: turret
     4300000: Plane
     4300002: back_left_leg01
     4300004: back_left_leg02
@@ -224,5 +268,5 @@ ModelImporter:
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   additionalBone: 1
-  animationType: 2
+  animationType: 0
   userData: 

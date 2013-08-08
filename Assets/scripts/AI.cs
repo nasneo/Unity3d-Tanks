@@ -13,6 +13,9 @@ public class AI : MonoBehaviour
 	
 	void Start ()
 	{
+		if(tank == null){
+			tank = GameObject.Find("Tank").transform;
+		}
 	}
 	
 	void Fire ()
