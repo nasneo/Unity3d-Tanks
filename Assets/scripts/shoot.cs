@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class shoot : MonoBehaviour
+public class Shoot : MonoBehaviour
 {
 	public GameObject projectile;
 	public float speed = 1000f;
@@ -9,6 +9,7 @@ public class shoot : MonoBehaviour
 	public Vector3 initPosition;
 	public Transform tower;
 	private float lastshoot;
+//	public AudioClip shoot;
 	
 	void Update ()
 	{
@@ -22,8 +23,9 @@ public class shoot : MonoBehaviour
 
 	void Fire ()
 	{
-		GameObject instantiatedProjectile = Instantiate (projectile, transform.position + tower.rotation * initPosition, transform.rotation) as GameObject;
-		instantiatedProjectile.rigidbody.velocity = tower.rotation * (rigidbody.velocity + new Vector3 (0f, 0f, speed));
+		GameObject instantiatedProjectile = Instantiate (projectile, transform.position + tower.rotation * initPosition, tower.rotation) as GameObject;
+		instantiatedProjectile.rigidbody.velocity = rigidbody.velocity + tower.rotation * new Vector3 (0f, 0f, speed);
+		audio.Play ();
 		lastshoot = Time.time;
 	}
 }

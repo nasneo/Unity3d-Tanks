@@ -6,6 +6,11 @@ public class Tank : MonoBehaviour
 	public int maxHealth = 100;
 	public int curHealth = 100;
 	public float healthBar;
+	public float rate = 2f;
+	public float lastCollision;
+	public GameObject graphics;
+	private float rateSetActive = 0.3f;
+	private float lastSetActive;
 	
 	void Start ()
 	{
@@ -15,6 +20,15 @@ public class Tank : MonoBehaviour
 	void Update ()
 	{
 		addCurHealth (0);
+		if (rate + lastCollision < Time.time) {
+			gameObject.GetComponent<BoxCollider> ().collider.isTrigger = false;
+		}	
+		if (rateSetActive + lastSetActive < Time.time) {
+			graphics.SetActive (true);	
+		}
+		if(curHealth < 0 || curHealth == 0){
+			Application.LoadLevel("GameOver");
+		}
 	}
 
 	void OnGUI ()
@@ -34,25 +48,33 @@ public class Tank : MonoBehaviour
 		}
 		healthBar = (Screen.width / 2) * (curHealth / (float)maxHealth);
 	}
-	public void CollisionObject(bool healthCur){
-		if(healthCur){
+
+	public void CollisionObject (bool healthCur)
+	{
+		if (healthCur) {
 			curHealth -= 5;	
 		}
 	}
-	public void CollisionTerror(bool healthCur1){
-		if(healthCur1){
-			curHealth -= Random.Range(1, 5);	
+
+	public void CollisionTerror (bool healthCur1)
+	{
+		if (healthCur1) {
+			curHealth -= Random.Range (1, 5);	
 		}
 	}
 	
-	void OnCollisionEnter (Collision collision)
+	void OnTriggerEnter (Collider other)
 	{
-		if (collision.gameObject.tag == "Obstacle") {
-			GetComponent<MoveTank> ().SlowSpeed();
+		if (other.tag == "Obstacle") {
+			GetComponent<MoveTank> ().SlowSpeed ();
 			curHealth -= 5;
-		}
-		else if(collision.gameObject.tag == "Bullet"){
-			curHealth -= Random.Range(1, 5);	
+			gameObject.GetComponent<BoxCollider> ().collider.isTrigger = true;
+			lastCollision = Time.time;
+			graphics.SetActive (false);
+			lastSetActive = Time.time;	
+			
+		} else if (other.tag == "Bullet") {
+			curHealth -= Random.Range (1, 5);	
 		}
 	}
 }

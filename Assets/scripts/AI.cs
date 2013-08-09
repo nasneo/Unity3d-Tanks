@@ -6,7 +6,7 @@ public class AI : MonoBehaviour
 	public int health = 50;
 	public Transform tank;
 	public GameObject projectile;
-	public float speed = 100f;
+	public float speedShoot = 100f;
 	public Vector3 bulletOffset;
 	private float lastshoot;
 	public float rate = 0.5f;
@@ -21,7 +21,7 @@ public class AI : MonoBehaviour
 	void Fire ()
 	{
 		GameObject instantiatedProjectile = Instantiate (projectile, transform.position + transform.rotation * bulletOffset, transform.rotation) as GameObject;
-		instantiatedProjectile.rigidbody.velocity = ((tank.position - transform.position).normalized * speed);	
+		instantiatedProjectile.rigidbody.velocity = ((tank.position - transform.position).normalized * speedShoot);	
 		lastshoot = Time.time;
 	}
 	

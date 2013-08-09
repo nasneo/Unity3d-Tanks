@@ -45,7 +45,7 @@ public class PathBlock : MonoBehaviour
 	
 	GameObject CreateWall (float length, float height)
 	{
-		GameObject newWallGO = new GameObject ("wall", typeof(MeshFilter), typeof(MeshRenderer));
+		GameObject newWallGO = new GameObject ("wall", typeof(MeshFilter), typeof(MeshRenderer), typeof(BoxCollider));
 		newWallGO.transform.parent = transform;
 		
 		int sectionsNumber = (int)(length / height);
@@ -92,8 +92,9 @@ public class PathBlock : MonoBehaviour
 		
 		MeshRenderer newWallMR = newWallGO.GetComponent<MeshRenderer> ();
 		newWallMR.sharedMaterial = LevelGenerator.Instance.wallMaterial;
-//		newWallMR.castShadows = false;
-//		newWallMR.receiveShadows = false;
+		
+		newWallGO.GetComponent<BoxCollider> ().size = new Vector3(1000f, 20f, 0f);
+		newWallGO.GetComponent<BoxCollider> ().center = new Vector3(500f, 10f, 0f);
 		
 		return newWallGO;
 	}
@@ -126,15 +127,15 @@ public class PathBlock : MonoBehaviour
 			//new obstacle
 			GameObject newObstacle = Instantiate (obstaclePrefab) as GameObject;
 			newObstacle.transform.parent = transform;
-			newObstacle.transform.localPosition = new Vector3 (Random.Range (-8, 8), -0.4f, prePosition + Random.Range (15, 25)); 
+			newObstacle.transform.localPosition = new Vector3 (Random.Range (-8, 8), 2f, prePosition + Random.Range (35, 45)); 
 			newObstacle.transform.localRotation = Quaternion.identity;
 			prePosition = newObstacle.transform.localPosition.z;
 			//new terrorist
 			if(Random.value < 0.5f){
 			GameObject newTerrorist = Instantiate (terrorist) as GameObject;
 			newTerrorist.transform.parent = transform;
-			newTerrorist.transform.localPosition = new Vector3 (Random.Range (-8 , 8), 1, newObstacle.transform.localPosition.z + 10);
-			newTerrorist.transform.localRotation = Quaternion.identity;
+			newTerrorist.transform.localPosition = new Vector3 (Random.Range (-8 , 8), 0.5f, newObstacle.transform.localPosition.z + 20);
+//			newTerrorist.transform.localRotation = Quaternion.identity;
 			}
 		}
 	}
